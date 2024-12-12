@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DACN</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body style="background: linear-gradient(120deg, #d4fc79, #96e6a1); color: #333; font-family: Arial, sans-serif;">
+
+   <!-- Header -->
+   <header class="bg-primary text-white text-center " style="padding-bottom: 10px;">
+    <h1 class="display-4">Tìm hiểu công nghệ Jamstacks và xây dựng ứng dụng web minh hoạ các giải thuật đồng bộ tiến trình</h1>
+  </header>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">DACN</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+     
+          <li class="nav-item">
+            <a class="nav-link" href="../trietgia.html">Philosopher</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../writers-reader.html">Writers-Reader</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../producer-consumer.html">Producer-Consumer</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- Main Content -->
+  <div class="container my-5">
+    <div class="row">
+      <div class="col-md" style="margin-left: -355px; margin-top: 0px;" >
+        <div class="legend-container">
+          <table class="table table-sm table-bordered" style="width: 150px; margin: 0 auto; background-color: #f9f9f9;">
+            <thead class="table-dark">
+              <tr>
+                <th>Ký hiệu</th>
+                <th>Ý nghĩa</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="text-center">💤</td>
+                <td>Suy nghĩ</td>
+              </tr>
+              <tr>
+                <td class="text-center">🍴</td>
+                <td>Giữ 1 đũa</td>
+              </tr>
+              <tr>
+                <td class="text-center">🍴🍴</td>
+                <td>Đang ăn</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Left Side - Image -->
+      <div class="col-md-6 text-center">
+          <a class="btn btn-primary btn-lg " href="/mota-trietgia.html" style="margin-left: -170px;">Mô tả bài toán triết gia</a>
+        <div><div class="dining-table" id="diningTable" style="margin-top: 100px;margin-left: -15px;"></div></div>
+      </div>
+      <div id="descriptionContent" class="col-md-6 text-center" style="margin-top: 150px;width: 500px;margin-left: -500px; display: none;">
+        <p style="text-align: left;font-size: 20px;color:darkblue;">Bài toán "Bữa ăn của các triết gia" (The Dining Philosophers Problem) là một bài toán cổ điển trong lĩnh vực đồng bộ hóa tiến trình trong khoa học máy tính, được E. W. Dijkstra đưa ra vào năm 1965. Bài toán mô tả năm triết gia ngồi quanh một bàn tròn, với một chiếc đĩa thức ăn trước mỗi người và một chiếc đũa ở giữa mỗi hai triết gia liền kề.Các triết gia luân phiên giữa hai trạng thái: suy nghĩ và ăn uống. Để ăn, mỗi triết gia cần sử dụng hai chiếc đũa (một chiếc bên trái và một chiếc bên phải). Tuy nhiên, vì số đũa ít hơn so với số triết gia, nếu không có cơ chế đồng bộ hóa hợp lý, có thể xảy ra tình trạng kẹt cứng (deadlock), khi mỗi triết gia đều cầm một chiếc đũa và chờ đợi mãi mà không thể ăn được. Bài toán này minh họa cho các vấn đề liên quan đến đồng bộ hóa tài nguyên dùng chung, như việc tránh xung đột và kẹt cứng trong hệ thống đa tiến trình.</p>
+      </div>
+      
+      <!-- Right Side - Buttons and Display Box -->
+      <div class="col-md-6">
+        <!-- Row 1: Button and Combobox -->
+        <div class="row mb-3 d-flex align-items-center">
+          <div class="col-4 d-flex justify-content-start">
+            <button id="runButton" class="btn btn-primary btn-lg">
+              <i class="fas fa-play"></i> Run
+            </button>
+          </div>
+          <div class="col-4 d-flex justify-content-center">
+            <button id="deadlockButton" class="btn btn-danger btn-lg">
+              <i class="fas fa-exclamation-triangle"></i> Deadlock
+            </button>
+          </div>
+          <div class="col-4 d-flex justify-content-end">
+            <select id="optionSelect" class="form-select form-select-lg">
+              <option value="Philosophers - Semaphore">Semaphore</option>
+              <option value="Philosophers - Monitor">Monitor</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Input Box for Custom Problem -->
+        <div class="mb-3">
+          <label for="numPhilosophers" class="form-label" style="margin-left: -500px;">Nhập số triết gia</label>
+          <input type="number" id="numPhilosophers" class="form-control" value="5" min="1">
+        </div>
+
+        <!-- Row 2: Display Box -->
+        <div id="contentBox" class="content-box p-3 w-100 border border-dark" style="width: 500px;height: 510px;border-radius: 5px; overflow-y: auto;">
+          Kết quả sẽ hiển thị ở đây...
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="script.js"></script>
+</body>
+
+</html>
